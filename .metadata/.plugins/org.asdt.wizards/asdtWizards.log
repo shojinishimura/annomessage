@@ -1,0 +1,54 @@
+DEBUG main org.asdt.wizards.ASWizardsPlugin - ASWizards Configure
+DEBUG main org.asdt.wizards.ui.project.NewASProjectWizardClasspathPage - createControl
+DEBUG main org.asdt.core.ui.properties.ClasspathManagerControl - Checking extension 
+DEBUG main org.asdt.core.ui.properties.ClasspathManagerControl - Checking element action
+DEBUG main org.asdt.wizards.ui.project.NewASProjectWizardClasspathPage - setVisible : true
+DEBUG main org.asdt.wizards.ui.project.ProjectCreator - doFinish ChumbyAbacus
+DEBUG main org.asdt.core.resources.natures.ASNature - Adding builder to project
+DEBUG main org.asdt.wizards.ui.project.ProjectCreator - createFolderLayout ChumbyAbacus
+DEBUG main org.asdt.core.resources.ClasspathManager - Save Classpath ChumbyAbacus : 1
+DEBUG main org.asdt.core.resources.ClasspathManager - Creating asdt classpath file
+DEBUG main org.asdt.core.resources.ClasspathManager - Writing to C:\Documents and Settings\shoji\workspace\ChumbyAbacus\.asdt_classpath
+DEBUG main org.asdt.core.resources.ClasspathManager - Save Classpath ChumbyAbacus : 2
+DEBUG main org.asdt.core.resources.ClasspathManager - Writing to C:\Documents and Settings\shoji\workspace\ChumbyAbacus\.asdt_classpath
+DEBUG main org.asdt.core.ui.properties.ClasspathManagerControl - Set project output folder to bin
+INFO main org.asdt.compiler.internal.CompilerUnit - Compile took 0
+DEBUG main org.asdt.wizards.ui.project.NewASProjectWizard - doFinish
+DEBUG main org.asdt.core.resources.ClasspathManager - Save Classpath ChumbyAbacus : 2
+DEBUG main org.asdt.core.resources.ClasspathManager - Writing to C:\Documents and Settings\shoji\workspace\ChumbyAbacus\.asdt_classpath
+DEBUG main org.asdt.wizards.ui.AbstractSourceFolderAndPackagePage - Checking src with src
+DEBUG main org.asdt.core.ui.wizard.AbstractASProjectRelativeWizard - performFinish
+DEBUG main org.asdt.core.resources.PackageManager - Create package with path src
+DEBUG main org.asdt.editor.outline.AS2ContentOutlinePage - CreateControl : false
+INFO main org.asdt.compiler.internal.CompilerUnit - Compile took 0
+DEBUG org.eclipse.jface.text.reconciler.MonoReconciler org.asdt.editor.internal.strategies.ASReconcilingStrategy - reconcile
+INFO org.eclipse.jface.text.reconciler.MonoReconciler org.asdt.editor.internal.strategies.ASReconcilingStrategy - Reconcile parse for Main.as took 10
+DEBUG main org.asdt.editor.ActionScript2Editor - Created build item, show dialog is true
+WARN main org.asdt.compiler.ui.dialog.BuildItemDialog - Default is null for Background Colour
+DEBUG main org.asdt.core.resources.ClasspathManager - Save Classpath ChumbyAbacus : 2
+DEBUG main org.asdt.core.resources.ClasspathManager - Writing to C:\Documents and Settings\shoji\workspace\ChumbyAbacus\.asdt_classpath
+DEBUG main org.asdt.editor.ActionScript2Editor - Current executable setting false
+DEBUG main org.asdt.editor.ActionScript2Editor - Set executable class property to true on Main.as
+DEBUG org.eclipse.jface.text.reconciler.MonoReconciler org.asdt.editor.internal.strategies.ASReconcilingStrategy - reconcile
+INFO org.eclipse.jface.text.reconciler.MonoReconciler org.asdt.editor.internal.strategies.ASReconcilingStrategy - Reconcile parse for Main.as took 0
+DEBUG main org.asdt.editor.ActionScript2Editor - Current executable setting true
+DEBUG main org.asdt.editor.ActionScript2Editor - Set executable class property to true on Main.as
+DEBUG org.eclipse.jface.text.reconciler.MonoReconciler org.asdt.editor.internal.strategies.ASReconcilingStrategy - reconcile
+INFO org.eclipse.jface.text.reconciler.MonoReconciler org.asdt.editor.internal.strategies.ASReconcilingStrategy - Reconcile parse for Main.as took 0
+DEBUG main org.asdt.editor.ActionScript2Editor - Current executable setting true
+DEBUG main org.asdt.editor.ActionScript2Editor - Set executable class property to true on Main.as
+DEBUG main org.asdt.core.ui.properties.ClasspathManagerControl - Checking extension 
+DEBUG main org.asdt.core.ui.properties.ClasspathManagerControl - Checking element action
+DEBUG main org.asdt.core.ui.properties.ClasspathManagerControl - Set project output folder to bin
+WARN main org.asdt.compiler.ui.dialog.BuildItemDialog - Default is null for Background Colour
+DEBUG main org.asdt.core.resources.ClasspathManager - Save Classpath ChumbyAbacus : 2
+DEBUG main org.asdt.core.resources.ClasspathManager - Writing to C:\Documents and Settings\shoji\workspace\ChumbyAbacus\.asdt_classpath
+DEBUG main org.asdt.core.resources.ClasspathManager - Save Classpath ChumbyAbacus : 2
+DEBUG main org.asdt.core.resources.ClasspathManager - Writing to C:\Documents and Settings\shoji\workspace\ChumbyAbacus\.asdt_classpath
+INFO main org.asdt.compiler.internal.CompilerUnit - Compile of ChumbyAbacus took 361
+DEBUG main org.asdt.viewer.SWFView - SWFView Configure
+DEBUG main org.asdt.wizards.ASWizardsPlugin - ASWizards Configure
+WARN main org.asdt.core.ui.wizard.AbstractASProjectRelativeWizard - Shell is null, cant set image
+DEBUG main org.asdt.wizards.ui.project.NewASProjectWizardClasspathPage - createControl
+DEBUG main org.asdt.core.ui.properties.ClasspathManagerControl - Checking extension 
+DEBUG main org.asdt.core.ui.properties.ClasspathManagerControl - Checking element action

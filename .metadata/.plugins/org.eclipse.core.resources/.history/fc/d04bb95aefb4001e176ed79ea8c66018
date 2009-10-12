@@ -1,0 +1,19 @@
+package jp.gr.java_conf.shoji.util.message;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class MessageUtilsTest {
+
+    @Test
+    public void testCreateStringFormatMessageBundle() {
+        fail("Not yet implemented");
+    }
+
+    @Test
+    public void testCreateMessageFormatterFormatMessageBundle() {
+        fail("Not yet implemented");
+    }
+
+}

@@ -1,0 +1,6 @@
+package jp.gr.java_conf.shoji.util.message;
+
+public interface SampleMessageBundle {
+    public static final SampleMessageBundle MESSAGES = MessageUtils
+            .createMessageFormatterFormatMessageBundle(SampleMessageBundle.class);
+}

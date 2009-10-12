@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.codehaus.groovy.eclipse.groovyLaunchConfiguration">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/GroovySample/bin-groovy/jp/gr/java_conf/shoji/groovy/Sample.class"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<listAttribute key="org.eclipse.jdt.launching.CLASSPATH">
+<listEntry value="C:\Documents and Settings\shoji\workspace\GroovySample\bin"/>
+<listEntry value="C:\Documents and Settings\shoji\workspace\GroovySample\bin-groovy"/>
+<listEntry value="C:\eclipse\plugins\org.codehaus.groovy_1.5.7.20081120_2330\groovy-all-1.5.7.jar"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="jp.gr.java_conf.shoji.groovy.Sample"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="GroovySample"/>
+</launchConfiguration>

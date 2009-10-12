@@ -1,0 +1,5 @@
+/**
+ * アノテーションを活用し、引数チェック可能なメッセージリソースバンドル定義ライブラリ
+ * 
+ */
+package jp.gr.java_conf.shoji.util.message;

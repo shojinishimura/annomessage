@@ -1,0 +1,81 @@
+/**
+ * 
+ */
+package jp.gr.java_conf.shoji.util.message;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Proxy;
+
+import jp.gr.java_conf.shoji.util.message.annotations.Handler;
+import jp.gr.java_conf.shoji.util.message.handlers.MessageFormatMessageHandler;
+import jp.gr.java_conf.shoji.util.message.handlers.StringFormatMessageHandler;
+
+/**
+ * 
+ * @author shoji
+ * 
+ */
+public class MessageUtils {
+
+    public static <T> T createMessage(Class<T> clazz) {
+        Handler annotation = clazz.getAnnotation(Handler.class);
+        Class<? extends MessageHandler> handlerClass;
+        if (annotation == null) {
+            return createStringFormatMessageBundle(clazz);
+        } else {
+            handlerClass = annotation.value();
+        }
+        try {
+            MessageHandler handler = handlerClass.getConstructor(Class.class)
+                    .newInstance(clazz);
+            return createMessages(clazz, handler);
+        } catch (IllegalArgumentException e) {
+            throw new AssertionError(e);
+        } catch (SecurityException e) {
+            throw new AssertionError(e);
+        } catch (InstantiationException e) {
+            throw new AssertionError(e);
+        } catch (IllegalAccessException e) {
+            throw new AssertionError(e);
+        } catch (InvocationTargetException e) {
+            throw new AssertionError(e);
+        } catch (NoSuchMethodException e) {
+            throw new AssertionError(e);
+        }
+    }
+
+    /**
+     * 
+     * @param <T>
+     * @param clazz
+     * @param handler
+     * @return
+     */
+    public static <T> T createMessages(Class<T> clazz,
+            MessageHandler handler) {
+        Object obj = Proxy.newProxyInstance(clazz.getClassLoader(),
+                new Class[] { clazz }, handler);
+        return clazz.cast(obj);
+    }
+
+    /**
+     * 
+     * @param <T>
+     * @param clazz
+     * @return
+     */
+    public static <T> T createStringFormatMessageBundle(Class<T> clazz) {
+        return createMessages(clazz, new StringFormatMessageHandler(clazz));
+    }
+
+    /**
+     * 
+     * @param <T>
+     * @param clazz
+     * @return
+     */
+    public static <T> T createMessageFormatterFormatMessageBundle(Class<T> clazz) {
+        return createMessages(clazz,
+                new MessageFormatMessageHandler(clazz));
+    }
+}

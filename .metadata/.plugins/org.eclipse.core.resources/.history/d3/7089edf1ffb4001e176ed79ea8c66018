@@ -1,0 +1,7 @@
+package jp.gr.java_conf.shoji.util.message.annotations;
+
+import jp.gr.java_conf.shoji.util.message.MessageHandler;
+
+public @interface Formatter {
+    Class<? extends MessageHandler> value();
+}

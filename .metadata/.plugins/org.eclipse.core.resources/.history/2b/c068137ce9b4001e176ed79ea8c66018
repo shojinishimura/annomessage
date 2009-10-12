@@ -1,0 +1,18 @@
+package jp.gr.java_conf.shoji.util.message;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+
+class MessageBundleInvocationHandler implements InvocationHandler {
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args)
+            throws Throwable {
+        Messages msg = method.getAnnotation(Messages.class);
+        if (msg == null) {
+            throw new IllegalStateException("Messages Annotation does not set.");
+        }
+        return null;
+    }
+
+}

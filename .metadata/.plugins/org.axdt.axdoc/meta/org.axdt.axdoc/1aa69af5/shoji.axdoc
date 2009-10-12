@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<axdoc:AXPackage xmlns:axdoc="http://axdt.org/axdoc" name="shoji">
+  <types name="WebCamera" type="c">
+    <members name="WebCamera" type="m"/>
+  </types>
+</axdoc:AXPackage>

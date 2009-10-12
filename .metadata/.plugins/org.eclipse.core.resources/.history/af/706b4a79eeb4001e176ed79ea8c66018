@@ -1,0 +1,17 @@
+package jp.gr.java_conf.shoji.util.message;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+
+public class MessageUtils {
+    public static <T> T createStringFormatMessageBundle(Class<T> clazz) {
+        InvocationHandler h = new StringFormatMessageHandler();
+        Object obj = Proxy.newProxyInstance(clazz.getClassLoader(),
+                new Class[] { clazz }, h);
+        return clazz.cast(obj);
+    }
+    
+    public static <T> T createMessageFormatterFormatMessageBundle(Class<T> class) {
+        return null;
+    }
+}

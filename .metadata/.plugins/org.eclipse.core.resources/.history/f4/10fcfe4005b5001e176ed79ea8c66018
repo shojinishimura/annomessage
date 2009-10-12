@@ -1,0 +1,47 @@
+package jp.gr.java_conf.shoji.util.message;
+
+import static org.junit.Assert.*;
+
+import java.util.Locale;
+
+import org.junit.Test;
+
+import static jp.gr.java_conf.shoji.util.message.Bundle.MESSAGES;
+
+public class MessageUtilsTest {
+
+    @Test
+    public void testCreateStringFormatMessageBundle() {
+        Locale defaultLocale = Locale.getDefault();
+
+        Locale.setDefault(Locale.ROOT);
+
+        SampleMessageDefinitions bundle = MessageUtils
+                .createMessagesByStringFormat(SampleMessageDefinitions.class);
+        assertEquals("default message", bundle.message1());
+        assertEquals("default message abc, 0022", bundle.message2("abc", 22));
+
+        Locale.setDefault(Locale.JAPANESE);
+        assertEquals("デフォルトのメッセージ", bundle.message1());
+
+        Locale.setDefault(defaultLocale);
+    }
+
+    @Test
+    public void testSelf() throws Exception {
+        assertNotNull(Bundle.MESSAGES);
+
+        Locale defaultLocale = Locale.getDefault();
+        Locale.setDefault(Locale.ROOT);
+
+        assertEquals("default message", Bundle.MESSAGES.message1());
+        assertEquals("default message abc, 0022", Bundle.MESSAGES.message2(
+                "abc", 22));
+
+        Locale.setDefault(Locale.JAPANESE);
+        assertEquals("デフォルトのメッセージ", Bundle.MESSAGES.message1());
+
+        Locale.setDefault(defaultLocale);
+    }
+
+}

@@ -1,0 +1,7 @@
+#Sat Oct 10 02:40:17 JST 2009
+version=1
+pathvariable.logger=C\:/eclipse/plugins/org.asdt.logger_0.0.9/lib/flash_classes
+pathvariable.std=C\:/eclipse/plugins/org.asdt.mtasc_1.0.0/dist/std
+pathvariable.core=C\:/flash/mtasc-1.14/std8
+eclipse.preferences.version=1
+pathvariable.std8=C\:/eclipse/plugins/org.asdt.mtasc_1.0.0/dist/std8

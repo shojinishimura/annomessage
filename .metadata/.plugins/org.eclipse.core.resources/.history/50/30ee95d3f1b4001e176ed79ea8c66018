@@ -1,0 +1,10 @@
+package jp.gr.java_conf.shoji.util.message;
+
+public interface SampleMessageBundle {
+    @Messages( { @Message("default message"),
+            @Message(value = "デフォルトのメッセージ", locale = "ja") })
+    String message1();
+
+    @Messages( { @Message("default message %1$s, %2") })
+    String message2(String a, int b);
+}

@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package jp.gr.java_conf.shoji.util.message;
+
+import java.lang.reflect.Proxy;
+
+import jp.gr.java_conf.shoji.util.message.annotations.Handler;
+import jp.gr.java_conf.shoji.util.message.handlers.MessageFormatMessageHandler;
+import jp.gr.java_conf.shoji.util.message.handlers.StringFormatMessageHandler;
+
+/**
+ * 
+ * @author shoji
+ *
+ */
+public class MessageUtils {
+    
+    public static <T> T createMessage(Class<T> clazz) {
+        Handler handler = clazz.getAnnotation(Handler.class);
+    }
+    /**
+     * 
+     * @param <T>
+     * @param clazz
+     * @param handler
+     * @return
+     */
+    public static <T> T createMessageBundle(Class<T> clazz,
+            MessageHandler handler) {
+        Object obj = Proxy.newProxyInstance(clazz.getClassLoader(),
+                new Class[] { clazz }, handler);
+        return clazz.cast(obj);
+    }
+
+    /**
+     * 
+     * @param <T>
+     * @param clazz
+     * @return
+     */
+    public static <T> T createStringFormatMessageBundle(Class<T> clazz) {
+        return createMessageBundle(clazz, new StringFormatMessageHandler(clazz));
+    }
+
+    /**
+     * 
+     * @param <T>
+     * @param clazz
+     * @return
+     */
+    public static <T> T createMessageFormatterFormatMessageBundle(Class<T> clazz) {
+        return createMessageBundle(clazz,
+                new MessageFormatMessageHandler(clazz));
+    }
+}

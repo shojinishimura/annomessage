@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<axdoc:AXRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:axdoc="http://axdt.org/axdoc" name="source /WebCamera/src" url="platform:/resource/WebCamera/src" rootType="SOURCE">
+  <indexes name="shoji">
+    <entries name="WebCamera" type="c">
+      <entries name="WebCamera" type="m"/>
+    </entries>
+    <reference href="shoji.axdoc#shoji"/>
+  </indexes>
+</axdoc:AXRoot>

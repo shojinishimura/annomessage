@@ -1,0 +1,11 @@
+package jp.gr.java_conf.shoji.util.message;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+
+public class MessageUtils {
+    public static <T> T createMessageImpl(Class<T> clazz) {
+        T obj = Proxy.newProxyInstance(getClass().getClassLoader(), new Class[] {clazz}, h);
+        return null;
+    }
+}

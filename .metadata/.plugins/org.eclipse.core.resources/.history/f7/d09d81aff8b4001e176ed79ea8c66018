@@ -1,0 +1,17 @@
+package jp.gr.java_conf.shoji.util.message;
+
+import java.util.Locale;
+
+public class MessageFormatMessageHandler extends MessageHandler {
+
+    public MessageFormatMessageHandler(Class<?> proxiedInterface) {
+        super(proxiedInterface);
+    }
+
+    @Override
+    protected String format(Locale locale, String format, Object[] args) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

@@ -1,0 +1,14 @@
+package jp.gr.java_conf.shoji.util.message;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.util.Locale;
+
+public class StringFormatMessageHandler extends MessageHandler {
+
+    @Override
+    protected String format(Locale locale, String format, Object[] args) {
+        return String.format(locale, format, args);
+    }
+
+}

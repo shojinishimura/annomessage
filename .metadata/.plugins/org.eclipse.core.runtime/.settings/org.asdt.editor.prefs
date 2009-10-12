@@ -1,0 +1,4 @@
+#Fri Jun 12 02:09:24 JST 2009
+org.asdt.editor.preferences.ASTemplatePreferencesPage=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="org.asdt.editor.template.actionscript" deleted\="false" description\="a main class for chumby widget" enabled\="true" name\="chummain">import util.*;&\#13;\r\n&\#13;\r\nclass Main {&\#13;\r\n\tprivate var parent\:MovieClip;&\#13;\r\n\t&\#13;\r\n\tfunction Main(mc\:MovieClip) {&\#13;\r\n\t\tthis.parent \= mc;&\#13;\r\n\t}&\#13;\r\n\t&\#13;\r\n\tstatic function main(mc\:MovieClip) {&\#13;\r\n\t\tvar app \= new Main(mc);&\#13;\r\n\t}&\#13;\r\n}&\#13;\r\n\t\t</template></templates>
+eclipse.preferences.version=1
+org.asdt.editor.preferences.ASCodeTemplatePreferencesPage=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>

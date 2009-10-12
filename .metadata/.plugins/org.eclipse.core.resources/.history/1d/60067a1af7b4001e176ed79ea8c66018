@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package jp.gr.java_conf.shoji.util.message;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+
+/**
+ * @author shoji
+ *
+ */
+public abstract class MessageHandler implements InvocationHandler {
+
+    /* (non-Javadoc)
+     * @see java.lang.reflect.InvocationHandler#invoke(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])
+     */
+    @Override
+    public Object invoke(Object arg0, Method arg1, Object[] arg2)
+            throws Throwable {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

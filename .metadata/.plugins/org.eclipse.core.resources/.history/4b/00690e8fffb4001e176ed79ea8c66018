@@ -1,0 +1,5 @@
+package jp.gr.java_conf.shoji.util.message.annotations;
+
+public @interface Formatter {
+    Class<? extends MessageHandler> value() default StringFormatMessageHandler.class;
+}

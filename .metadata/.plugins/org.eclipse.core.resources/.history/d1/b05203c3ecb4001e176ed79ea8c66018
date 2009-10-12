@@ -1,0 +1,42 @@
+package jp.gr.java_conf.shoji.util.message;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.util.Locale;
+
+class StringFormatMessageHandler implements InvocationHandler {
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args)
+            throws Throwable {
+        Messages msg = method.getAnnotation(Messages.class);
+        if (msg == null) {
+            throw new IllegalStateException("Messages Annotation does not set.");
+        }
+        Locale locale = Locale.getDefault();
+        String lang = locale.getLanguage();
+        String country = locale.getCountry();
+        String variant = locale.getVariant();
+
+        String[] localeList = new String[] { null, "", lang,
+                lang + "_" + country, lang + "_" + country + "_" + variant };
+        /*
+         * fit level 0: no match 1: default 2: only lang 3: lang and country 4:
+         * lang, country, variant
+         */
+        String[] formats = new String[] { "", "", "", "", "", "" };
+        int mostFit = 0;
+
+        Message[] bundleMessages = msg.value();
+        for (Message message : bundleMessages) {
+            String localeStr = message.locale();
+            for (int i = 1; i < localeList.length; i++) {
+                if (localeList[i].equals(localeStr)) {
+
+                }
+            }
+        }
+        return String.format(formats[mostFit], args);
+    }
+
+}

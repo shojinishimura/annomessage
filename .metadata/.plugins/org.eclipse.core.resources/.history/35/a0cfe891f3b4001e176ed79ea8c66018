@@ -1,0 +1,9 @@
+package jp.gr.java_conf.shoji.util.message;
+
+public enum Bundle {
+    MESSAGE
+    
+    public static interface Messages {
+        
+    }
+}
