@@ -4,28 +4,29 @@ AnnoMessage
 
 author: Shoji Nishimura
 
-�A�m�e�[�V���������p���A�����`�F�b�N�\�ȃ��b�Z�[�W���\�[�X�o���h����`���C�u����
+アノテーションを活用し、引数チェック可能なメッセージリソースバンドル定義ライブラリ
 
-�]���̃��b�Z�[�W���\�[�X�o���h�����`����ۂ̖��_�Ƃ��Ĉȉ��̂Q�������邱�Ƃ��ł���B
+従来のメッセージリソースバンドルを定義する際の問題点として以下の２つを挙げることができる。
 
-1. ���b�Z�[�W���\�[�X�t�@�C���ƃv���O�����Ƃ̊ԂŁA������̃L�[�ɂ���ČĂяo���ׂ����b�Z�[�W���\�[�X��I�����Ă����B�L�[�̃^�C�v�~�X���������ꍇ�A���s���܂ł��̊ԈႢ�ɋC�����ɂ����B�܂��A���t�@�N�^�����O���ŃL�[�ƂȂ镶�����ς����ہA�ύX�R��̌����ɂȂ肦���B
+1. メッセージリソースファイルとプログラムとの間で、文字列のキーによって呼び出すべきメッセージリソースを選択していた。
+   キーのタイプミスがあった場合、実行時までその間違いに気がつきにくい。また、リファクタリング等でキーとなる文字列を変えた際、変更漏れの原因になりえた。
 
-2. �t�H�[�}�b�g������ɂ��A���b�Z�[�W���J�X�^�}�C�Y�ł���悤�ɂ����Ƃ��A���Ԗڂɂǂ̒l���Z�b�g���Ȃ���΂Ȃ�Ȃ�����
-   �����������b�Z�[�W���\�[�X�t�@�C���ɓ�����Ȃ���΂Ȃ�Ȃ��B�܂��A�ǂ�Ȍ^�̒l��n���Ȃ���΂Ȃ�Ȃ��������l�ł���B
+2. フォーマット文字列により、メッセージをカスタマイズできるようにしたとき、何番目にどの値をセットしなければならないかを
+   いちいちメッセージリソースファイルに当たらなければならない。また、どんな型の値を渡さなければならないかも同様である。
 
-�����ŁA�����̖��_���������邽�߂̃��b�Z�[�W���\�[�X�o���h����`���C�u������񋟂���B
-�����̃A�C�f�A�́A�ȉ��̒ʂ�ł���B
+そこで、これらの問題点を解決するためのメッセージリソースバンドル定義ライブラリを提供する。
+実現のアイデアは、以下の通りである。
 
-1. �A�m�e�[�V���������p���A������L�[�ɂ�郁�b�Z�[�W���\�[�X�̊֘A�t���������B
-2. ���b�Z�[�W���\�[�X�L�[�Ŏg�p����t�H�[�}�b�g��������擾����̂ł͂Ȃ��A���\�b�h�Ăяo���ň�����n���A
-   �t�H�[�}�b�g�ςݕ�������擾�ł���悤�ɂ���B
-3. ���b�Z�[�W��`�̃A�m�e�[�V�����Ƃ��̃A�m�e�[�V�����Œ��߂��ꂽ���\�b�h�̃V�O�l�`���̒�`�̊֘A�t����
-   ���邾���ŁA�ދ��Ŗʓ|�ȃ��\�b�h�{�̂̒�`�����Ȃ��Ă��悢�悤�ɂ���B
+1. アノテーションを活用し、文字列キーによるメッセージリソースの関連付けを避ける。
+2. メッセージリソースキーで使用するフォーマット文字列を取得するのではなく、メソッド呼び出しで引数を渡し、
+   フォーマット済み文字列を取得できるようにする。
+3. メッセージ定義のアノテーションとそのアノテーションで注釈されたメソッドのシグネチャの定義の関連付けを
+   するだけで、退屈で面倒なメソッド本体の定義をしなくてもよいようにする。
 
-���X�g���b�L�[�ȃR�[�f�B���O������K�v�����邪�A�]���̃��b�Z�[�W���\�[�X�o���h����`�����i�i�ɖ��m��
-�~�X�������ɂ������̂ł���Ǝ��͍l���Ă���B
+少々トリッキーなコーディングをする必要があるが、従来のメッセージリソースバンドル定義よりも格段に明確で
+ミスがおきにくいものであると私は考えている。
 
-�R�[�h��F ���b�Z�[�W���\�[�X�o���h����`
+コード例： メッセージリソースバンドル定義
 
 <code>
 public abstract class Bundle {
@@ -35,27 +36,27 @@ public abstract class Bundle {
     public static interface MessageDefinitions {
         @Messages({
             @Message(value="default message"),
-            @Message(value="�f�t�H���g�̃��b�Z�[�W", locale="ja")
+            @Message(value="デフォルトのメッセージ", locale="ja")
             })
         String message1();
         
         @Messages({
             @Message(value="default message %1$s, %2$4d"),
-            @Message(value="�f�t�H���g�̃��b�Z�[�W %1$s, %2$4d", locale="ja")
+            @Message(value="デフォルトのメッセージ %1$s, %2$4d", locale="ja")
             })
         String message2(String str, int n);
     }
 }
 </code>
 
-�R�[�h��: ���b�Z�[�W���\�[�X�o���h���̗��p
+コード例: メッセージリソースバンドルの利用
 
 <code>
 Bundle.MESSAGES.message1();
 Bundle.MESSAGES.message2("ABC", 2);
 </code>
 
-import static��p����ƁABundle���ȗ����邱�Ƃ��\�ł���B
+import staticを用いると、Bundleを省略することが可能である。
 
 <code>
 import static your.package.Bundle.*;
